@@ -13659,7 +13659,7 @@
 											"top": 556,
 											"width": 193.3115234375,
 											"height": 13,
-											"text": "-Name: SusuString",
+											"text": "-Name: SusuStringView",
 											"horizontalAlignment": 0
 										}
 									],
@@ -16057,7 +16057,7 @@
 									},
 									"name": "Name",
 									"visibility": "private",
-									"type": "SusuString"
+									"type": "SusuStringView"
 								}
 							],
 							"operations": [
