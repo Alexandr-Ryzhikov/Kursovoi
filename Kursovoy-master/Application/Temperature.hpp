@@ -30,9 +30,9 @@ public:
         CurrentIndex = 0;
   }
   
-  void Calculation(uint32_t code)
+  void Calculation(uint32_t codes[1])
   {
-    float Temper = k * code + b;
+    float Temper = k * codes[1] + b;
     Value = Temper;
   }
   
