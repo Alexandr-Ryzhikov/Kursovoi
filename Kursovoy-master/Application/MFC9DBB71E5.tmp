@@ -1,0 +1,47 @@
+#pragma once
+#include "IUnits.hpp"
+#include <array>
+
+using namespace std;
+
+class Temperature
+{
+private:
+  float Value;
+  std::array <IUnits*, 3> units;
+  std::uint8_t CurrentUnits;
+  float k;
+  float b;
+  static constexpr SusuString Name();
+  
+public:
+  Temperature(float k1, float b1): k(k1), b(b1) {};
+  
+  void NextUnits()
+  {
+    if(Button.IsPushed)
+    {
+      for(int i=0; i<2; i++)
+      {
+        CurrentUnits.GetValue;
+      }
+    }
+  }
+  
+  void Calculation(uint32_t code)
+  {
+    float Temper = k * code + b;
+    CurrentUnits.Calculation(Temper);
+    Value = CurrentUnits.GetValue;
+  }
+  
+  auto GetValueAndName()
+{
+    ///units[currentIndex].Calculate() ;
+    auto Value = units[currentIndex]->GetValue();
+    constexpr auto Name = units[currentIndex]->GetName();
+
+    return std::make_tuple(value, name) ;
+}
+  
+};
