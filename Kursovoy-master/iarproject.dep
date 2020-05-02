@@ -242,6 +242,9 @@
             <file>$PROJ_DIR$\Debug\Obj\queue.xcl</file>
             <file>$PROJ_DIR$\AHardware\Button.hpp</file>
             <file>$PROJ_DIR$\Application\Button.hpp</file>
+            <file>$PROJ_DIR$\Debug\List\main.s</file>
+            <file>$PROJ_DIR$\..\CortexLib-master\AbstractHardware\Registers\STM32F411\FieldValues\gpiocfieldvalues.hpp</file>
+            <file>$PROJ_DIR$\..\CortexLib-master\AbstractHardware\Registers\STM32F411\gpiocregisters.hpp</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -292,6 +295,10 @@
             <name>$PROJ_DIR$\main.cpp</name>
             <outputs>
                 <tool>
+                    <name>ICCARM</name>
+                    <file> 105</file>
+                </tool>
+                <tool>
                     <name>BICOMP</name>
                     <file> 232</file>
                 </tool>
@@ -303,7 +310,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 231 146 92 168 185 204 38 188 19 205 211 197 155 181 124 103 20 166 229 18 121 89 50 148 61 85 175 110 201 94 134 97 230 151 217 159 24 14 10 35 149 215 90 82 133 106 42 54 116 84 157 206 34 233 222 129 214 28 40 182 100 226 26 27 102 95 114 21 192 172 0 93 140 86 101 199 184 51 177 113 189 9 162 2 17 22 136 203 218 145 87 57 80 49 219 41 45 107 173 39 5 160 59 161 91 30 12 53 65 96 170 64 77 75 236 69</file>
+                    <file> 231 146 92 168 185 204 38 188 19 205 211 197 155 181 124 103 20 166 229 18 121 89 50 148 61 85 175 110 201 94 134 97 230 151 217 159 24 14 10 35 149 215 90 82 133 106 42 54 116 84 157 206 34 233 222 129 214 28 40 182 100 226 26 27 102 95 114 21 192 172 0 93 140 86 101 199 184 51 177 113 189 9 162 2 17 22 136 203 218 145 87 57 80 49 219 41 45 107 173 39 5 160 59 161 91 30 12 53 65 96 170 64 77 75 236 69 70 71 74 239 238 235</file>
                 </tool>
             </inputs>
         </file>
@@ -578,10 +585,6 @@
         <forcedrebuild>
             <name>$PROJ_DIR$\Rtos\FreeRtos\portable\IAR\ARM_CM4F\portasm.c</name>
             <tool>ICCARM</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
         </forcedrebuild>
     </configuration>
     <configuration>

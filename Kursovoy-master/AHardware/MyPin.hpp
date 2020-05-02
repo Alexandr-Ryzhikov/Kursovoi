@@ -12,7 +12,7 @@ public:
   
   static bool IsSet()
     {
-      return ((Port::IDR::Get() & (1 << PortNum))! = 0)
+      return ((Port::IDR::Get() & (1 << PortNum))! = 0);
     }
   
 };

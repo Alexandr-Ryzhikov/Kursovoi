@@ -8,7 +8,7 @@ private:
   const float k = 1.0F;
   const float b = -273.0F;
   float Value = 0.0F;
-  const SusuString Name(Celsius);
+  static constexpr SusuStringView Name = SusuStringView("Kelvin");
 public:
   
   float GetValue()
@@ -21,7 +21,7 @@ public:
     Value = k * Temper + b;
   }
   
-  constexpr SusuStringView& GetName()
+   const SusuStringView& GetName() const override
   {
     return Name;
   }

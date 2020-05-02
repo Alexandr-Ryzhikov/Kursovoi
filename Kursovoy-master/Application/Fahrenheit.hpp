@@ -9,7 +9,7 @@ private:
   const float k = 9/5;
   const float b = 32.0F;
   float Value = 0.0F;
-  const SusuStringView Name(Fahrenheit);
+  static constexpr SusuStringView Name = SusuStringView("Fahrenheit");
 public:
   
   float GetValue()

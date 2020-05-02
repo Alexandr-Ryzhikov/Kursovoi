@@ -16,6 +16,6 @@ private:
 public:
   
   void Execute() override;
-  TaskButton(OsWrapper::Event& event);
+  ButtonTask(OsWrapper::Event& event);
   
 };
