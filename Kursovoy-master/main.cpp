@@ -11,6 +11,7 @@
 #include "Fahrenheit.hpp"
 #include "Kelvin.hpp"
 #include "ButtonTask.hpp"
+#include "MyPin.hpp"
 
 
 std::uint32_t SystemCoreClock = 16'000'000U;
@@ -39,10 +40,10 @@ int __low_level_init(void)
 }
 
 //OsWrapper::Event event{500ms, 1}; //FIXME Чисто для примера
-
+OsWrapper::Event event(500ms, 1);
 //MyTask myTask(event, UserButton::GetInstance()); //FIXME Чисто для примера
 using myADC = ADC<ADC1>;
-
+ButtonTask myTaskButton (event);
 
 int main()
 {
@@ -52,7 +53,8 @@ int main()
   myADC::On();
   myADC::adcConfig(Resolution::Bits12, tSampleRate::Cycles480, tSampleRate::Cycles144);
   myADC::SetChannels(0, 18);
-  
+    using namespace OsWrapper;
+  Rtos::CreateThread(myTaskButton, "UserButton", ThreadPriority::normal);
   Temperature Tempe( (3.3f/(4096.0f*0.0025f)) ,(25.0f-0.76f/0.0025f) ) ;
   
   return 0;

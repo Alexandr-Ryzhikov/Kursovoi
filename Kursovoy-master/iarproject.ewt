@@ -2377,13 +2377,10 @@
             <name>$PROJ_DIR$\AHardware\ADC.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\AHardware\ButtonTask.cpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\AHardware\ButtonTask.hpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\AHardware\GPIOPort.hpp</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\AHardware\myPGIO.hpp</name>
         </file>
         <file>
             <name>$PROJ_DIR$\AHardware\MyPin.hpp</name>
