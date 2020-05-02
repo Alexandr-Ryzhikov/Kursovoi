@@ -6,7 +6,10 @@
 #include "susudefs.hpp"
 #include "Temperature.hpp"
 #include "Celsius.hpp"
-
+#include "Button.hpp"
+#include "IUnits.hpp"
+#include "Fahrenheit.hpp"
+#include "Kelvin.hpp"
 
 
 std::uint32_t SystemCoreClock = 16'000'000U;

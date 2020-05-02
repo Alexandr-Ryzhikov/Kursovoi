@@ -1,7 +1,7 @@
 #ifndef FAHRENHEIT_HPP
 #define FAHRENHEIT_HPP
 #include "IUnits.hpp"
-#include "susudefs
+#include "susudefs.hpp"
 
 class Fahrenheit : public IUnits
 {
@@ -9,15 +9,20 @@ private:
   const float k = 9/5;
   const float b = 32.0F;
   float Value = 0.0F;
-  static SusuString Name("Fahrenheit");
+  const SusuStringView Name(Fahrenheit);
 public:
+  
+  float GetValue()
+  {
+    return Value;
+  }
   
     void Calculation(float Temper)
   {
     Value = k * Temper + b;
   }
   
-   SusuString& GetName() const override
+  const SusuStringView& GetName() const override
   {
     return Name;
   }

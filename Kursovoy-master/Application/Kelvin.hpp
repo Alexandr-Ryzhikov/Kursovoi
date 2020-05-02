@@ -8,9 +8,10 @@ private:
   const float k = 1.0F;
   const float b = -273.0F;
   float Value = 0.0F;
-  static constexpr SusuString Name("Celsius");
+  const SusuString Name(Celsius);
 public:
-     float GetValue()
+  
+  float GetValue()
   {
     return Value;
   }
@@ -20,7 +21,7 @@ public:
     Value = k * Temper + b;
   }
   
-  constexpr SusuString& GetName()
+  constexpr SusuStringView& GetName()
   {
     return Name;
   }

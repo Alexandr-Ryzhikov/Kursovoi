@@ -13,6 +13,11 @@ private:
 
 public:
   
+  float GetValue()
+  {
+    return Value;
+  }
+  
    void Calculation(float Temper) override
   {
     Value = k * Temper + b;
