@@ -5,14 +5,14 @@ class MyPin
 {
 public:
   
-  static void Toggle()
+    static void Toggle()
     {
       Port::ODR::Toggle(1<<PortNum);
     }
   
-  static bool IsSet()
+    static bool IsSet()
     {
-      return ((Port::IDR::Get() & (1 << PortNum))! = 0);
+      return ((Port::IDR::Get() & ( 1 << PortNum ))! = 0);
     }
   
 };

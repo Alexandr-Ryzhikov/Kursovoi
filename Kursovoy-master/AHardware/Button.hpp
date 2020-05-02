@@ -2,6 +2,7 @@
 #include "MyPin.hpp"
 
 template<typename Pin>
+
 class Button
 {
   public:
