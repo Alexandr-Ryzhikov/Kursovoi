@@ -30,9 +30,9 @@ public:
         CurrentIndex = 0;
   }
   
-  void Calculation(uint32_t codeT) override
+  void Calculation(uint32_t code) override
   {
-    float Temper = k * codeT + b;
+    float Temper = k * code + b;
     Value = Temper;
   }
   
