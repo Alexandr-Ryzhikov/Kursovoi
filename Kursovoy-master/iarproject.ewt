@@ -2385,6 +2385,9 @@
         <file>
             <name>$PROJ_DIR$\AHardware\MyPin.hpp</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\AHardware\PWM.hpp</name>
+        </file>
     </group>
     <group>
         <name>Application</name>

@@ -12,7 +12,7 @@
 #include "Kelvin.hpp"
 #include "ButtonTask.hpp"
 #include "MyPin.hpp"
-
+#include "IVariable.hpp"
 
 std::uint32_t SystemCoreClock = 16'000'000U;
 
@@ -44,6 +44,7 @@ OsWrapper::Event event(500ms, 1);
 //MyTask myTask(event, UserButton::GetInstance()); //FIXME Чисто для примера
 using myADC = ADC<ADC1>;
 ButtonTask myTaskButton (event);
+;
 
 int main()
 {

@@ -2,8 +2,6 @@
 #define ADC_HPP
 #include <array>
 
-
-
 enum class Resolution
 {
   Bits12,
@@ -25,8 +23,6 @@ enum class tSampleRate
 };
 
 template<class T>
-
-
 class ADC
 {
 private:
@@ -37,7 +33,6 @@ private:
   {
    T::CR2::SWSTART::On::Set(); //Start conversion
   }
-    
 
   static bool IsReady()
   {
