@@ -1,6 +1,7 @@
 #ifndef ADC_HPP
 #define ADC_HPP
 #include <array>
+#include "DMA.hpp"
 
 enum class Resolution
 {
@@ -28,6 +29,8 @@ class ADC
 private:
 
   std::array<uint32_t, 2> codes;
+  int *poscode1 = &codes[0];
+  int *poscode2 = &codes[1];
   
   static void Start()
   {
@@ -53,6 +56,13 @@ public:
     
   static void adcConfig(Resolution resolution, tSampleRate tsamplerate, tSampleRate vsamplerate)
   {
+    RCC::AHB1ENR::DMA2EN::Enable::Set();
+    ADC::CR2::DMA::Enable::Set();
+    DMA.ChanellSet();
+    DMA.DataSizeSet();
+    DMA.DirectionSet();
+    DMA.TargetSet();
+    
     switch(resolution)
     {
       case Resolution::Bits12:
@@ -150,6 +160,7 @@ public:
   
   std::array<uint32_t, 2> GetMeasureAndValue()
   {
+    DMA.StreamOn();
     codes[0] = T::DR::Get();
     codes[1] = T::DR::Get();
     return codes;
