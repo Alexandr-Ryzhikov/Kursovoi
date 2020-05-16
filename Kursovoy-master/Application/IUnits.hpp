@@ -16,7 +16,6 @@ public:
   }
   
   virtual void Calculation(float Temper) = 0;
-
   
    virtual const SusuStringView& GetName() const = 0;
 };

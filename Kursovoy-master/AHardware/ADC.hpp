@@ -29,22 +29,11 @@ class ADC
 private:
 
   std::array<uint32_t, 2> codes;
-  int *poscode1 = &codes[0];
-  int *poscode2 = &codes[1];
+  uint32_t poscode = &codes;
   
   static void Start()
   {
    T::CR2::SWSTART::On::Set(); //Start conversion
-  }
-
-  static bool IsReady()
-  {
-   return T::SR::EOC::ConversionComplete::IsSet();
-  }
-    
-  static std::uint32_t Get()
-  {
-    return T::DR::Get();
   }
 
 public:
@@ -54,14 +43,19 @@ public:
     T::CR2::ADON::Enable::Set(); // Enable ADC1
   }
     
-  static void adcConfig(Resolution resolution, tSampleRate tsamplerate, tSampleRate vsamplerate)
+  static void dmaConfig()
   {
     RCC::AHB1ENR::DMA2EN::Enable::Set();
     ADC::CR2::DMA::Enable::Set();
-    DMA.ChanellSet();
+    DMA.ChannelSet();
     DMA.DataSizeSet();
     DMA.DirectionSet();
-    DMA.TargetSet();
+    DMA.TargetSet(poscode);
+    DMA.StreamOn(); 
+  }
+  
+  static void adcConfig(Resolution resolution, tSampleRate tsamplerate, tSampleRate vsamplerate)
+  {
     
     switch(resolution)
     {
@@ -160,11 +154,7 @@ public:
   
   std::array<uint32_t, 2> GetMeasureAndValue()
   {
-    DMA.StreamOn();
-    codes[0] = T::DR::Get();
-    codes[1] = T::DR::Get();
-    return codes;
-    
+    return codes; 
   }
   
 };

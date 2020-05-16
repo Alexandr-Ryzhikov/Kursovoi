@@ -5,7 +5,7 @@ class DMA
 {
 public:
   
-  void ChanellSet() //vibor canala, c kotoromu podkluchaemsya (S0 - stream 0, CHSEL::Value0 - chanell 0)
+  void ChannelSet() //vibor canala, c kotoromu podkluchaemsya (S0 - stream 0, CHSEL::Value0 - chanell 0)
   {
     DMA2::S0CR::CHSEL::Value0::Set(); 
   }
@@ -17,13 +17,17 @@ public:
   
   void DataSizeSet() //Ustanavlivaem ob'emi pamati periferii i pamaty
   {
-    DMA2::S0CR::MSIZE::Value1::Set();
-    DMA2::S0CR::PSIZE::Value1::Set();
+    S0NDTR::NDT::Ste(2);
+    DMA2::S0CR::MSIZE::Value2::Set();
+    MINC:Value1::Set()
+    DMA2::S0CR::PSIZE::Value2::Set();
+    PINC:Value0::Set()
   }
   
-  void TargetSet() //Ustanabvimaem oblast pamati gde budut schitannie znachenia
+  void TargetSet(uint32_t poscode) //Ustanabvimaem oblast pamati gde budut schitannie znachenia
   {
     DMA2::S0CR::CT::Value0::Set();
+    DMA2::S0M0AR::M0A::Set(poscode);
   }
   
   void StreamOn()  //Vkluchaen CircularMode, zapuskaem flow
