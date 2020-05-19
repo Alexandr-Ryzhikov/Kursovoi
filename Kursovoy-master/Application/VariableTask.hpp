@@ -12,10 +12,10 @@ class VariableTask : public OsWrapper::Thread<128>
 private:
   float VoltageValue;
   float TemperatureValue;
-  
-  void Execute() override;
-  VariableTask(Oswrapper::Event& event);
+  OsWrapper::Event& myEvent;  
+
   
 public:
-  OsWrapper::Event& myEvent;
+  void Execute() override;
+  VariableTask(OsWrapper::Event& event);
 };

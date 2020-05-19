@@ -46,7 +46,7 @@ public:
   static void dmaConfig()
   {
     RCC::AHB1ENR::DMA2EN::Enable::Set();
-    ADC::CR2::DMA::Enable::Set();
+    T::CR2::DMA::Enable::Set();
     DMA.ChannelSet();
     DMA.DataSizeSet();
     DMA.DirectionSet();
