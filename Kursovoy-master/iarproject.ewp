@@ -2151,6 +2151,12 @@
         <file>
             <name>$PROJ_DIR$\AHardware\PWM.hpp</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\AHardware\USART.hpp</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\AHardware\USARTConfig.hpp</name>
+        </file>
     </group>
     <group>
         <name>Application</name>

@@ -152,7 +152,7 @@ public:
     T::SQR3::SQ2::Set(channelNum2);
   } 
   
-  std::array<uint32_t, 2> GetMeasureAndValue()
+  std::array<uint32_t, 2> GetValue()
   {
     return codes; 
   }

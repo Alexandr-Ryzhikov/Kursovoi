@@ -1,13 +1,21 @@
 #pragma once
 
-class VariableTask
+#include "therad.hpp"
+#include "event.hpp"
+#include "ButtonTask.hpp"
+#include "ADC.hpp"
+#include "USART.hpp"
+#include "IVariable.hpp"
+
+class VariableTask : public OsWrapper::Thread<128>
 {
 private:
   float VoltageValue;
   float TemperatureValue;
-  float k;
-  float b;
+  
+  void Execute() override;
+  VariableTask(Oswrapper::Event& event);
   
 public:
-
+  OsWrapper::Event& myEvent;
 };
