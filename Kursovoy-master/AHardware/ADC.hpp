@@ -29,7 +29,7 @@ class ADC
 private:
 
   std::array<uint32_t, 2> codes;
-  uint32_t poscode = &codes;
+  
   
   static void Start()
   {
@@ -50,7 +50,7 @@ public:
     DMA.ChannelSet();
     DMA.DataSizeSet();
     DMA.DirectionSet();
-    DMA.TargetSet(poscode);
+    DMA.TargetSet(&codes);
     DMA.StreamOn(); 
   }
   

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "therad.hpp"
+#include "thread.hpp"
 #include "event.hpp"
 #include "ButtonTask.hpp"
 #include "ADC.hpp"

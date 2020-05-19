@@ -1,5 +1,5 @@
 #pragma once
-#include "dmaregisters.hpp"
+#include "dma2registers.hpp"
 
 class DMA
 {
@@ -17,11 +17,11 @@ public:
   
   void DataSizeSet() //Ustanavlivaem ob'emi pamati periferii i pamaty
   {
-    S0NDTR::NDT::Ste(2);
+    DMA2::S0NDTR::NDT::Set(2);
     DMA2::S0CR::MSIZE::Value2::Set();
-    MINC:Value1::Set()
+    DMA2::S0CR::MINC::Value1::Set();
     DMA2::S0CR::PSIZE::Value2::Set();
-    PINC:Value0::Set()
+    DMA2::S0CR::PINC::Value0::Set();
   }
   
   void TargetSet(uint32_t poscode) //Ustanabvimaem oblast pamati gde budut schitannie znachenia
