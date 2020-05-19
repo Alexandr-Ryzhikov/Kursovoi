@@ -2179,6 +2179,9 @@
             <name>$PROJ_DIR$\Application\Temperature.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\Application\VariableTask.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\Application\Voltage.hpp</name>
         </file>
     </group>
@@ -2252,6 +2255,30 @@
             <group>
                 <name>FreeRtos</name>
             </group>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\criticalsection.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\event.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\eventmode.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\interruptentry.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\mailbox.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\mutex.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\rtos.hpp</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Rtos\wrapper\thread.hpp</name>
+            </file>
         </group>
     </group>
     <file>

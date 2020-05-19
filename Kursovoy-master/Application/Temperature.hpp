@@ -11,8 +11,8 @@ private:
   float Value;
   std::array <IUnits*, 3> units;
   std::uint8_t CurrentUnits;
-  float k;
-  float b;
+  float k = (3.3f/(4096.0f*0.0025f);
+  float b = (25.0f-0.76f/0.0025f);
   constexpr SusuStringView Name();
   int CurrentIndex = 0;
   
