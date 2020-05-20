@@ -1,8 +1,6 @@
 #pragma once
 #include <array>
 
-using namespace std;
-
 class Voltage : public IVariable
 {
 private:
@@ -13,14 +11,14 @@ private:
 public:
   Voltage(float k1, float b1): K(k1), B(b1) {};
   
-  float GetValue() override
-  {
-    return Value;
-  }
-  
    void Calculation(std::uint32_t code) override
   {
     Value = code*K + B;
   }
-   
+  
+   float GetValue() override
+  {
+    return Value;
+  }
+  
 };

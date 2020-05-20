@@ -23,7 +23,10 @@ enum class tSampleRate
   Cycles480
 };
 
+using myDMA =  DMA<DMA2>;
+
 template<class T>
+
 class ADC
 {
 private:
@@ -46,11 +49,11 @@ public:
   {
     RCC::AHB1ENR::DMA2EN::Enable::Set();
     T::CR2::DMA::Enable::Set();
-    DMA.ChannelSet();
-    DMA.DataSizeSet();
-    DMA.DirectionSet();
-    DMA.TargetSet(uint32_t &codes);
-    DMA.StreamOn(); 
+    myDMA::ChannelSet();
+    myDMA::DataSizeSet();
+    myDMA::DirectionSet();
+    myDMA::TargetSet(&codes);
+    myDMA::StreamOn(); 
   }
   
   static void adcConfig(Resolution resolution, tSampleRate tsamplerate, tSampleRate vsamplerate)

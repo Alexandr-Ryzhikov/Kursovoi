@@ -11,6 +11,6 @@ public:
   
   virtual float GetValue() = 0;
     
-  virtual auto GetValueAndName() = 0;
+  virtual void GetValueAndName() = 0;
   
 };
