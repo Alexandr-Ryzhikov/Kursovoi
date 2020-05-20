@@ -1,22 +1,22 @@
 #pragma once
 #include "IUnits.hpp"
 #include <array>
-#include "IVariable.hpp"
-
+using namespace std;
 
 class Temperature
 {
 private:
   float Value;
+  float Temper;
   std::array <IUnits*, 3> units;
   //std::uint8_t CurrentUnits;
   float k = (3.3f/(4096.0f*0.0025f));
   float b = (25.0f-0.76f/0.0025f);
   constexpr SusuStringView Name();
   int CurrentIndex = 0;
-  std::uint32_t code = codes[0];
+  uint32_t code = codes[0];
 public:
-  Temperature(float k1, float b1): k(k1), b(b1) {};
+  Temperature(std::uint32_t Code, float k1, float b1): code(Code), k(k1), b(b1) {};
 
   void NextUnits()
   {
@@ -29,10 +29,10 @@ public:
         CurrentIndex = 0;
   }
   
-  void Calculation(std::uint32_t code) override
+    void Calculation(std::uint32_t code) override
   {
-    float Temper = k * code + b;
-    Value = Temper;
+    float Value = k * code + b;
+    Temper = Value;
   }
   
   auto GetValueAndName()

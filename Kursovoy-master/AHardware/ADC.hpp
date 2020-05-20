@@ -31,7 +31,8 @@ class ADC
 {
 private:
 
-  std::array<uint32_t, 2> codes;
+  static std::array<uint32_t, 2> codes;
+  static uint32_t Pcodes = &codes;
   
   static void Start()
   {
@@ -39,6 +40,8 @@ private:
   }
 
 public:
+  
+  
   
   static void On()
   {
@@ -52,7 +55,7 @@ public:
     myDMA::ChannelSet();
     myDMA::DataSizeSet();
     myDMA::DirectionSet();
-    myDMA::TargetSet(&codes);
+    myDMA::TargetSet(Pcodes);
     myDMA::StreamOn(); 
   }
   
