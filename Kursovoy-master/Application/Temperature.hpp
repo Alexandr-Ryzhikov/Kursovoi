@@ -15,7 +15,7 @@ private:
   float b = (25.0f-0.76f/0.0025f);
   constexpr SusuStringView Name();
   int CurrentIndex = 0;
-  
+  uint32_t code = codes[0];
 public:
   Temperature(float k1, float b1): k(k1), b(b1) {};
 
@@ -30,9 +30,9 @@ public:
         CurrentIndex = 0;
   }
   
-  void Calculation(uint32_t codes) override
+  void Calculation(uint32_t code) override
   {
-    float Temper = k * codes[0] + b;
+    float Temper = k * code + b;
     Value = Temper;
   }
   

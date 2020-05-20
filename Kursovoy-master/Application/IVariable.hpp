@@ -7,7 +7,7 @@ private:
 
 public:
 
-  virtual void Calucaltion(std::array<uint32_t, 2> codes) = 0;
+  virtual void Calucaltion(std::uint32_t code) = 0;
   
   virtual float GetValue() = 0;
     

@@ -24,7 +24,7 @@ public:
     DMA2::S0CR::PINC::Value0::Set();
   }
   
-  void TargetSet(uint32_t poscode) //Ustanabvimaem oblast pamati gde budut schitannie znachenia
+  void TargetSet(uint32_t &poscode) //Ustanabvimaem oblast pamati gde budut schitannie znachenia
   {
     DMA2::S0CR::CT::Value0::Set();
     DMA2::S0M0AR::M0A::Set(poscode);

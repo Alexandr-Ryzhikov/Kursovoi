@@ -30,7 +30,6 @@ private:
 
   std::array<uint32_t, 2> codes;
   
-  
   static void Start()
   {
    T::CR2::SWSTART::On::Set(); //Start conversion
@@ -50,7 +49,7 @@ public:
     DMA.ChannelSet();
     DMA.DataSizeSet();
     DMA.DirectionSet();
-    DMA.TargetSet(&codes);
+    DMA.TargetSet(uint32_t &codes);
     DMA.StreamOn(); 
   }
   
