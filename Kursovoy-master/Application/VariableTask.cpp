@@ -20,6 +20,10 @@ void VariableTask::Execute()
     TemperatureValue =  tuple_;//poluchaem temperaturu
     VoltageValue = IVariable::GetValue(); //poluchaem voltage
     
+    //Vivodim chernila
+    std::cout << "Temperature: " << std::get<0>(TemperatureValue) << std::get<1>(TemperatureValue) << std::endl;
+    std::cout << "Voltage: " << VoltageValue << " V. ' << std::endl;
+     
     //Koldunstvo s knopkoi
     Sleep(500);
     if (myEvent.Wait() !=0)
@@ -27,9 +31,6 @@ void VariableTask::Execute()
       Temperature::NextUnits;
     }
     
-    //Vivodim chernila
-    std::cout << "Temperature: " << std::get<0>(TemperatureValue) << std::get<1>(TemperatureValue) << std::endl;
-    std::cout << "Voltage: " << VoltageValue << " V. ' << std::endl;
   } 
 }
 

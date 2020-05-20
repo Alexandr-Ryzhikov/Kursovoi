@@ -1,60 +1,78 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V8.40.2.214/W32 for ARM         02/May/2020  13:52:32
+# IAR ANSI C/C++ Compiler V8.40.2.214/W32 for ARM         20/May/2020  17:27:03
 # Copyright 1999-2019 IAR Systems AB.
 #
 #    Cpu mode     =  
 #    Endian       =  little
-#    Source file  =  C:\Kod_Kurs\Kurs\Kursovoy-master\AHardware\ButtonTask.cpp
+#    Source file  =
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\AHardware\ButtonTask.cpp
 #    Command line =
-#        -f C:\Users\User\AppData\Local\Temp\EW47E0.tmp
-#        (C:\Kod_Kurs\Kurs\Kursovoy-master\AHardware\ButtonTask.cpp -lC
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Debug\List -lA
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Debug\List -o
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Debug\Obj --no_cse --no_unroll
-#        --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling
-#        --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp
-#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        -f C:\Users\User\AppData\Local\Temp\EWB029.tmp
+#        (C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\AHardware\ButtonTask.cpp
+#        -lC C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Debug\List
+#        -lA C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Debug\List
+#        -o C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Debug\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
 #        8.3\arm\inc\c\DLib_Config_Normal.h" -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\wrapper\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\wrapper\FreeRtos\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\include\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\Common\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\IAR\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\IAR\ARM_CM4F\
-#        -I C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\MemMang\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\MyTasks\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Common\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\CMSIS\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Application\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\Application\Diagnostic\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\AHardware\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\AHardware\GpioPort\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\AHardware\IrqController\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\AbstractHardware\Pin\
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\ -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\wrapper\
 #        -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\AbstractHardware\Registers\STM32F411\FieldValues\
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\wrapper\FreeRtos\
 #        -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\AbstractHardware\Registers\STM32F411\
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\
 #        -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\AbstractHardware\Registers\
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\include\
 #        -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\AbstractHardware\Port\
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\portable\
 #        -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\AbstractHardware\Atomic\
-#        -I C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\Common\ -I
-#        C:\Kod_Kurs\Kurs\Kursovoy-master\..\CortexLib-master\Common\Singleton\
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\portable\Common\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\portable\IAR\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\portable\IAR\ARM_CM4F\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Rtos\FreeRtos\portable\MemMang\
+#        -I C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\MyTasks\ -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Common\ -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\CMSIS\ -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Application\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Application\Diagnostic\
+#        -I C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\AHardware\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\AHardware\GpioPort\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\AHardware\IrqController\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\AbstractHardware\Pin\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\AbstractHardware\Registers\STM32F411\FieldValues\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\AbstractHardware\Registers\STM32F411\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\AbstractHardware\Registers\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\AbstractHardware\Port\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\AbstractHardware\Atomic\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\Common\
+#        -I
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\..\CortexLib-master\Common\Singleton\
 #        -Ol --c++ --no_exceptions --no_rtti)
 #    Locale       =  C
-#    List file    =  C:\Kod_Kurs\Kurs\Kursovoy-master\Debug\List\ButtonTask.lst
-#    Object file  =  C:\Kod_Kurs\Kurs\Kursovoy-master\Debug\Obj\ButtonTask.o
+#    List file    =
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Debug\List\ButtonTask.lst
+#    Object file  =
+#        C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\Debug\Obj\ButtonTask.o
 #
 ###############################################################################
 
-C:\Kod_Kurs\Kurs\Kursovoy-master\AHardware\ButtonTask.cpp
+C:\Users\User\Documents\GitHub\Kursovoi\Kursovoy-master\AHardware\ButtonTask.cpp
       1          #include "ButtonTask.hpp"
 
    \                                 In section .text, align 2

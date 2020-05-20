@@ -1,7 +1,7 @@
 #pragma once
 #include "IUnits.hpp"
 #include <array>
-
+#include "IVariable.hpp"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ public:
       for(int i=0; i<2; i++)
       {
         CurrentIndex = i;
-        CurrentUnits = Value; 
+        //CurrentUnits = Value; 
       }
       if(CurrentIndex >= 2)
         CurrentIndex = 0;
