@@ -1,9 +1,10 @@
 #pragma once
 #include "IUnits.hpp"
+#include "IVariable.hpp"
 #include <array>
 using namespace std;
 
-class Temperature
+class Temperature : public IVariable
 {
 private:
   float Value;
@@ -16,7 +17,6 @@ private:
   int CurrentIndex = 0;
   uint32_t code = codes[0];
 public:
-  Temperature(std::uint32_t Code, float k1, float b1): code(Code), k(k1), b(b1) {};
 
   void NextUnits()
   {
@@ -35,9 +35,9 @@ public:
     Temper = Value;
   }
   
-  auto GetValueAndName()
+  void GetValueAndName()
   {
-    ///units[currentIndex].Calculate() ;
+    //units[currentIndex].Calculate() ;
     auto Value = units[CurrentIndex]->GetValue();
     auto Name = units[CurrentIndex]->GetName();
 

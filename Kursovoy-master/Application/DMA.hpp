@@ -1,5 +1,6 @@
 #pragma once
 #include "dma2registers.hpp"
+
 template<class D>
 class DMA
 {
