@@ -1,6 +1,6 @@
 #pragma once
 #include "IUnits.hpp"
-#include "IVariable.hpp"
+
 #include <array>
 using namespace std;
 

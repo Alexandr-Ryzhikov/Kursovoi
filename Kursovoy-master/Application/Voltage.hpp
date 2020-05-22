@@ -1,6 +1,6 @@
 #pragma once
 #include <array>
-#include "IVariable.hpp"
+
 using namespace std;
 
 class Voltage : public IVariable
