@@ -2,6 +2,8 @@
 #include "rtos.hpp"         // for Rtos
 #include "event.hpp"        // for Event
 #include "rccregisters.hpp" // for RCC
+#include "gpioaregisters.hpp"  //for Gpioa
+#include "gpiocregisters.hpp"  //for Gpioc
 #include "adc1registers.hpp" //for ADC1
 #include "susudefs.hpp"
 #include "thread.hpp"
@@ -12,6 +14,7 @@
 //Vetka VariableTask
 #include "VariableTask.hpp"
 #include "ADC.hpp" //for ADC
+#include "adccommonregisters.hpp" //for ADCCommon
 #include "USART.hpp"
 #include "IVariable.hpp"
 #include "Voltage.hpp"
@@ -45,8 +48,12 @@ int __low_level_init(void)
   RCC::CR::HSEON::On::Set();
   RCC::CFGR::SW::Hse::Set();
   RCC::APB1ENR::TIM3EN::Enable::Set();
-  
+  RCC::APB2ENR::ADC1EN::Enable::Set(); //tekt na adc
+  ADC_Common::CCR::TSVREFE::Enable::Set();//switch to temperature sensor
+  RCC::AHB1ENR::DMA2EN::Enable::Set(); //takt na dma2
   RCC::AHB1ENR::GPIOCEN::Enable::Set();// takt na port C
+  RCC::AHB1ENR::GPIOAEN::Enable::Set();// takt na port C
+  GPIOA::MODER::MODER0::Analog::Set();
   GPIOC::MODER::MODER8::Alternate::Set();
   GPIOC::AFRH::AFRH8::Af2::Set();
   // Settings PWM
@@ -76,9 +83,6 @@ int main()
   using namespace OsWrapper;
   //Rtos::CreateThread(myTask, "myTask", ThreadPriority::lowest);   //FIXME Чисто для примера
   
-  //myADC::On();
-  //myADC::adcConfig(Resolution::Bits12, tSampleRate::Cycles480, tSampleRate::Cycles144);
-  //myADC::SetChannels(0, 18);
   using namespace OsWrapper;
   Rtos::CreateThread(myTaskButton, "UserButton", ThreadPriority::normal);
   Rtos::CreateThread(myVariableTask, "Execute", ThreadPriority::normal);

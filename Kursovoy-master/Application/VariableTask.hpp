@@ -11,7 +11,7 @@ template <typename myADC>
 class VariableTask : public OsWrapper::Thread<512> 
 {
 private:
-  Voltage VoltageValue=Voltage((3.3F/1024), (25.0F - 0.76F/0.0025F));//(3.3F/1024)(25.0F - 0.76F/0.0025F)
+  Voltage VoltageValue=Voltage((3.3F/1024), 0);//(3.3F/1024)
   Temperature TemperatureValue=Temperature((3.3f/(4096.0f*0.0025f)),(25.0f-0.76f/0.0025f));
   
   
@@ -23,11 +23,14 @@ public:
   {
     //Koldunstvo s ADC//////////////////////////////////////////////////////////////////////////////////////////
     
-    myADC::On(); //vkluchaen adc
+   
+    
     myADC::adcConfig(Resolution::Bits12, tSampleRate::Cycles480, tSampleRate::Cycles480); //nastraivaem adc
     myADC::SetChannels(0, 18); //podkluchaem kanali
     myADC::dmaConfig(); //podkluchaem DMA
-    
+    myADC::On(); //vkluchaen adc
+    myADC::Start();
+       
    for( ; ;)
   {
     auto codes = myADC::GetValue(); //po idee, uzhe ne nuzhen
@@ -41,7 +44,7 @@ public:
     
     //Koldunstvo s Temperature(poluchaem temperature)////////////////////////////////////////////////////////////
     TemperatureValue.Calculation(codes[1]);
-    TemperatureValue.GetValueAndName();
+   // TemperatureValue.GetValueAndName();
     
     //Vivodim chernila///////////////////////////////////////////////////////////////////////////////////////////
     
@@ -49,12 +52,7 @@ public:
     std::cout << "Voltage: " << VoltageValue.GetValue() << " V. " << std::endl;
     std::cout << "Temperature: " << TemperatureValue.GetValue() << std::endl;
     //Koldunstvo s knopkoi
-    Sleep(500ms);
-    if (myEvent.Wait() !=0)
-    {
-      //Temperature::NextUnits;
-    }
-    
+    //Sleep(500ms);
   } 
   }
   

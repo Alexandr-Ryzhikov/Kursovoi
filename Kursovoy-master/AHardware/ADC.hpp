@@ -34,15 +34,15 @@ private:
    static inline std::array<uint32_t, 2> codes;
    static inline std::uint32_t Pcodes = reinterpret_cast<std::uint32_t>(&codes);
 
+ 
+public:
   
+   
   static void Start()
   {
    T::CR2::SWSTART::On::Set(); //Start conversion
   }
 
-public:
-  
-  
   
   static void On()
   {
@@ -51,12 +51,11 @@ public:
     
   static void dmaConfig()
   {
-    RCC::AHB1ENR::DMA2EN::Enable::Set();
     T::CR2::DMA::Enable::Set();
     myDMA::ChannelSet();
     myDMA::DataSizeSet();
     myDMA::DirectionSet();
-    myDMA::TargetSet(Pcodes);
+    myDMA::TargetSet(T::DR::Address, Pcodes);
     myDMA::StreamOn(); 
   }
   
@@ -150,12 +149,13 @@ public:
   {
     T::SQR1::L::Conversions2::Set();
     T::CR1::SCAN::Enable::Set();
-    T::CR2::EOCS::SingleConversion::Set();
-    T::CR2::CONT::SingleConversion::Set();
+    T::CR2::EOCS::SequenceConversion::Set();
+    T::CR2::CONT::ContinuousConversion::Set();
     assert(channelNum1 <19);
     assert(channelNum2 <19);
     T::SQR3::SQ1::Set(channelNum1);
     T::SQR3::SQ2::Set(channelNum2);
+    T::CR2::DDS::DMARequest::Set();
   } 
   
   static std::array<uint32_t, 2>& GetValue()
