@@ -20,7 +20,7 @@
 #include "Celsius.hpp"
 #include "Fahrenheit.hpp"
 #include "Kelvin.hpp"
-
+#include "PWM.hpp"
 std::uint32_t SystemCoreClock = 16'000'000U;
 
 extern "C" {
@@ -41,6 +41,22 @@ int __low_level_init(void)
   
   RCC::APB2ENR::SYSCFGEN::Enable::Set(); 
   
+    //taktirovan'e
+  RCC::CR::HSEON::On::Set();
+  RCC::CFGR::SW::Hse::Set();
+  RCC::APB1ENR::TIM3EN::Enable::Set();
+  
+  RCC::AHB1ENR::GPIOCEN::Enable::Set();// takt na port C
+  GPIOC::MODER::MODER8::Alternate::Set();
+  GPIOC::AFRH::AFRH8::Af2::Set();
+  // Settings PWM
+  TIM3::CCER::CC2E::Value1::Set();
+  // inverst PWM
+  TIM3::CCMR1_Output::OC2M::Value0::Set();
+  // Run TIM3
+  TIM3::CR1::CEN::Value1::Set();
+  //data for TIM3 CCR
+  
 
   return 1;
 }
@@ -49,22 +65,23 @@ int __low_level_init(void)
 //OsWrapper::Event event{500ms, 1}; //FIXME Чисто для примера
 OsWrapper::Event event(500ms, 1);
 //MyTask myTask(event, UserButton::GetInstance()); //FIXME Чисто для примера
-//using myADC = ADC<ADC1>;
+using myADC = ADC<ADC1>;
+
 ButtonTask myTaskButton (event);
-VariableTask myVariableTask (event);
+VariableTask<myADC> myVariableTask (event);
 ;
 
 int main()
 {
   using namespace OsWrapper;
   //Rtos::CreateThread(myTask, "myTask", ThreadPriority::lowest);   //FIXME Чисто для примера
-  //Rtos::Start();
+  
   //myADC::On();
   //myADC::adcConfig(Resolution::Bits12, tSampleRate::Cycles480, tSampleRate::Cycles144);
   //myADC::SetChannels(0, 18);
   using namespace OsWrapper;
   Rtos::CreateThread(myTaskButton, "UserButton", ThreadPriority::normal);
   Rtos::CreateThread(myVariableTask, "Execute", ThreadPriority::normal);
-  
+  Rtos::Start();
   return 0;
 }

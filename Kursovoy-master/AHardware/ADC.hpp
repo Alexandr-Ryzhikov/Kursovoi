@@ -31,8 +31,9 @@ class ADC
 {
 private:
 
-  static std::array<uint32_t, 2> codes;
-  static uint32_t Pcodes = &codes;
+   static inline std::array<uint32_t, 2> codes;
+   static inline std::uint32_t Pcodes = reinterpret_cast<std::uint32_t>(&codes);
+
   
   static void Start()
   {
@@ -157,8 +158,11 @@ public:
     T::SQR3::SQ2::Set(channelNum2);
   } 
   
-  std::array<uint32_t, 2> GetValue()
+  static std::array<uint32_t, 2>& GetValue()
   {
+    codes[0] = T::DR::Get();
+    codes[1] = T::DR::Get();
+    
     return codes; 
   }
   

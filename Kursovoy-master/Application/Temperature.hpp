@@ -15,7 +15,6 @@ private:
   float b = (25.0f-0.76f/0.0025f);
   constexpr SusuStringView Name();
   int CurrentIndex = 0;
-  uint32_t code = codes[0];
 public:
 
   void NextUnits()
