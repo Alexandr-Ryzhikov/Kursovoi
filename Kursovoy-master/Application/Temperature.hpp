@@ -7,11 +7,10 @@ using namespace std;
 class Temperature : public IVariable
 {
 private:
-  float Temper;
+  float Value;
+  float Temper = Value;
   std::array <IUnits*, 3> units;
   //std::uint8_t CurrentUnits;
-  //float k = (3.3f/(4096.0f*0.0025f));
-  //float b = (25.0f-0.76f/0.0025f);
   constexpr SusuStringView Name();
   int CurrentIndex = 0;
 public:
@@ -30,8 +29,7 @@ public:
   
     void Calculation(std::uint32_t code) override
   {
-    float Value = k * code + b;
-    Temper = Value;
+    Value = k * code + b;
   }
   
     float GetValue() override

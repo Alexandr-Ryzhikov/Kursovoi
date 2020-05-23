@@ -2164,6 +2164,9 @@
             <name>$PROJ_DIR$\Application\Celsius.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\Application\DMA.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\Application\Fahrenheit.hpp</name>
         </file>
         <file>

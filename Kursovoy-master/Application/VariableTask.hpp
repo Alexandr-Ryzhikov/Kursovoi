@@ -11,7 +11,7 @@ template <typename myADC>
 class VariableTask : public OsWrapper::Thread<512> 
 {
 private:
-  Voltage VoltageValue=Voltage((3.3F/1024), 0);//(3.3F/1024)
+  Voltage VoltageValue=Voltage((3.3F/4096), 0);
   Temperature TemperatureValue=Temperature((3.3f/(4096.0f*0.0025f)),(25.0f-0.76f/0.0025f));
   
   
@@ -39,6 +39,8 @@ public:
     
     VoltageValue.Calculation(codes[0]); //chitaem
     VoltageValue.GetValueAndName();
+    
+    Sleep(100ms);
     //TemperatureValue =  tuple_;//poluchaem temperaturu
     //VoltageValue = IVariable::GetValue(); //poluchaem voltage
     
