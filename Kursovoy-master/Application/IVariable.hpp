@@ -4,13 +4,13 @@
 
 class IVariable
 {
-private:
-  const std::uint32_t code;
+protected:
+  float Value;
   const float k;
   const float b;
  
 public:
-  IVariable(std::uint32_t Code, float k1, float b1): code(Code), k(k1), b(b1) {};
+  IVariable( float k1, float b1): k(k1), b(b1) {};
   
   virtual void Calculation(std::uint32_t code) = 0;
   

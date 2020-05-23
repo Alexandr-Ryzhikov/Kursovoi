@@ -25,10 +25,10 @@ public:
     D::S0CR::PINC::Value0::Set();
   }
   
-  static void TargetSet(uint32_t &poscode) //Ustanabvimaem oblast pamati gde budut schitannie znachenia
+  static void TargetSet(uint32_t Pcode) //Ustanabvimaem oblast pamati gde budut schitannie znachenia
   {
     D::S0CR::CT::Value0::Set();
-    D::S0M0AR::M0A::Set(poscode);
+    D::S0M0AR::Set(Pcode);
   }
   
   static void StreamOn()  //Vkluchaen CircularMode, zapuskaem flow

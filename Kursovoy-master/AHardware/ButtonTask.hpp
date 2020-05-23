@@ -6,7 +6,7 @@
 #include "gpiocregisters.hpp" //for gpiocregisters
 #include "Button.hpp" //for Button
 
-class ButtonTask : public OsWrapper::Thread<128>
+class ButtonTask : public OsWrapper::Thread<512>
 {
 private:
   
