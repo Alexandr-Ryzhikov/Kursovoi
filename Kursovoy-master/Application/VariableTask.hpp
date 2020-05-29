@@ -39,7 +39,7 @@ public:
     
     VoltageValue.Calculation(codes[0]); //chitaem
     VoltageValue.GetValueAndName();
-    
+    float VoltValue = VoltageValue.GetValue();
     Sleep(100ms);
     //TemperatureValue =  tuple_;//poluchaem temperaturu
     //VoltageValue = IVariable::GetValue(); //poluchaem voltage

@@ -3,6 +3,7 @@
 #include "rccregisters.hpp"
 #include "tim3registers.hpp"
 
+using namespace std;
 template <typename Timer>
 class PWM
 {

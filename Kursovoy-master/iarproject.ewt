@@ -2416,6 +2416,9 @@
             <name>$PROJ_DIR$\Application\Kelvin.hpp</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\Users\User\Documents\1403\RtosWrapper-master\Application\Led.hpp</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\Application\Temperature.hpp</name>
         </file>
         <file>
@@ -2423,6 +2426,12 @@
         </file>
         <file>
             <name>$PROJ_DIR$\Application\Voltage.hpp</name>
+        </file>
+    </group>
+    <group>
+        <name>MyTask</name>
+        <file>
+            <name>$PROJ_DIR$\MyTask\LedTask.hpp</name>
         </file>
     </group>
     <group>

@@ -30,7 +30,7 @@ C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\IAR\ARM_CM4F
 -I
 C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\MemMang
 -I
-C:\Kod_Kurs\Kurs\Kursovoy-master\MyTasks
+C:\Kod_Kurs\Kurs\Kursovoy-master\MyTask
 -I
 C:\Kod_Kurs\Kurs\Kursovoy-master\Common
 -I
@@ -88,7 +88,7 @@ C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\IAR\ARM_CM4F
 -I
 C:\Kod_Kurs\Kurs\Kursovoy-master\Rtos\FreeRtos\portable\MemMang
 -I
-C:\Kod_Kurs\Kurs\Kursovoy-master\MyTasks
+C:\Kod_Kurs\Kurs\Kursovoy-master\MyTask
 -I
 C:\Kod_Kurs\Kurs\Kursovoy-master\Common
 -I

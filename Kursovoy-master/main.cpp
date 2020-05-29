@@ -23,6 +23,9 @@
 #include "Celsius.hpp"
 #include "Fahrenheit.hpp"
 #include "Kelvin.hpp"
+//Vetka LedTask
+#include "LedTask.hpp"
+#include "Led.hpp"
 #include "PWM.hpp"
 std::uint32_t SystemCoreClock = 16'000'000U;
 
