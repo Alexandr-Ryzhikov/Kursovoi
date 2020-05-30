@@ -10,7 +10,7 @@ private:
   float Value;
   float Temper = Value;
   std::array <IUnits*, 3> units;
-  //std::uint8_t CurrentUnits;
+  std::uint8_t CurrentUnits;
   constexpr SusuStringView Name();
   int CurrentIndex = 0;
 public:
@@ -21,7 +21,7 @@ public:
       for(int i=0; i<2; i++)
       {
         CurrentIndex = i;
-        //CurrentUnits = Value; 
+       // CurrentUnits = Value; 
       }
       if(CurrentIndex >= 2)
         CurrentIndex = 0;

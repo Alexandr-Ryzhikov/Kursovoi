@@ -1,23 +1,22 @@
 #pragma once
 
 #include "thread.hpp"
-#include "event.hpp"
-#include "Voltage.hpp"
+#include "VariableTask.hpp"
+#include "Led.hpp"
 
-class LedTask : public OsWrapper::Thread<512> 
+template <auto& Variabletask>
+class LedTask : public OsWrapper::Thread<128> 
 {
 private:
-  Voltage VoltageValue=Voltage((3.3F/4096), 0);
   float Value;
-  float VoltValue = VoltageValue.GetValue();
-    
-  OsWrapper::Event& myEvent;  
+  Led led1;
 public:
   void Execute() override
   {
-    Value = VoltValue;
+    Value = Variabletask.GetVolt();
+    Sleep(500ms);
+    led1.SetDutyCycle();
   }
   
-  LedTask(OsWrapper::Event& event): myEvent(event)
-  {}
+  
 };

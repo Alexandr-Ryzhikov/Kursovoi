@@ -88,7 +88,7 @@ public:
     switch(tsamplerate)
     {
       case tSampleRate::Cycles3:
-      T::SMPR1::SMP18::Cycles480::Set();
+      T::SMPR1::SMP18::Cycles3::Set();
       break;
       case tSampleRate::Cycles15:
       T::SMPR1::SMP18::Cycles15::Set();
@@ -159,10 +159,7 @@ public:
   } 
   
   static std::array<uint32_t, 2>& GetValue()
-  {
-    codes[0] = T::DR::Get();
-    codes[1] = T::DR::Get();
-    
+  {  
     return codes; 
   }
   

@@ -60,9 +60,11 @@ int __low_level_init(void)
   GPIOC::MODER::MODER8::Alternate::Set();
   GPIOC::AFRH::AFRH8::Af2::Set();
   // Settings PWM
-  TIM3::CCER::CC2E::Value1::Set();
+  TIM3::CCER::CC3E::Value1::Set();
   // inverst PWM
-  TIM3::CCMR1_Output::OC2M::Value0::Set();
+  TIM3::CCMR1_Output::OC2M::Value6::Set();
+  TIM3::CCMR1_Output::OC2PE::Value1::Set();
+  TIM3::CR1::ARPE::Value1::Set();
   // Run TIM3
   TIM3::CR1::CEN::Value1::Set();
   //data for TIM3 CCR
@@ -76,10 +78,10 @@ int __low_level_init(void)
 OsWrapper::Event event(500ms, 1);
 //MyTask myTask(event, UserButton::GetInstance()); //FIXME Чисто для примера
 using myADC = ADC<ADC1>;
-
-ButtonTask myTaskButton (event);
 VariableTask<myADC> myVariableTask (event);
-LedTask myLedTask (event);
+ButtonTask myTaskButton (event);
+LedTask<myVariableTask> myLedTask;
+
 
 int main()
 {

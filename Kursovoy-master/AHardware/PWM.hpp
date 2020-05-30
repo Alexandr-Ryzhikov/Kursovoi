@@ -8,9 +8,9 @@ template <typename Timer>
 class PWM
 {
 public: 
-  void SetDuty (uint16_t DutyCycle)
+  void SetDuty(uint16_t DutyCycle)
   { 
-    Timer::CCR3=DutyCycle;
+    Timer::CCR3::Write(DutyCycle);
   }
 
 };
