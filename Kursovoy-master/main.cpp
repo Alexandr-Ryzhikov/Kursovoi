@@ -79,7 +79,7 @@ using myADC = ADC<ADC1>;
 
 ButtonTask myTaskButton (event);
 VariableTask<myADC> myVariableTask (event);
-;
+LedTask myLedTask (event);
 
 int main()
 {
@@ -89,6 +89,7 @@ int main()
   using namespace OsWrapper;
   Rtos::CreateThread(myTaskButton, "UserButton", ThreadPriority::normal);
   Rtos::CreateThread(myVariableTask, "Execute", ThreadPriority::normal);
+  Rtos::CreateThread(myLedTask, "Execute", ThreadPriority::normal);
   Rtos::Start();
   return 0;
 }
