@@ -13,9 +13,13 @@ private:
 public:
   void Execute() override
   {
+    for( ; ; )
+    {
     Value = Variabletask.GetVolt();
-    Sleep(500ms);
+    Sleep(100ms);
+    led1.CalculateDutyCycle(Value);
     led1.SetDutyCycle();
+    }
   }
   
   

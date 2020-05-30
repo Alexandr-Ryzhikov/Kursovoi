@@ -62,8 +62,8 @@ int __low_level_init(void)
   // Settings PWM
   TIM3::CCER::CC3E::Value1::Set();
   // inverst PWM
-  TIM3::CCMR1_Output::OC2M::Value6::Set();
-  TIM3::CCMR1_Output::OC2PE::Value1::Set();
+  TIM3::CCMR2_Output::OC3M::Value6::Set();
+  TIM3::CCMR2_Output::OC3PE::Value1::Set();
   TIM3::CR1::ARPE::Value1::Set();
   // Run TIM3
   TIM3::CR1::CEN::Value1::Set();
